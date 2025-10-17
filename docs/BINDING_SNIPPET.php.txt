@@ -1,0 +1,9 @@
+// In App\Providers\AppServiceProvider::register()
+
+use App\Src\Domain\Intervention\Repositories\TaskRepository;
+use App\Src\Infrastructure\Persistence\Intervention\EloquentTaskRepository;
+
+public function register(): void
+{
+    $this->app->bind(TaskRepository::class, EloquentTaskRepository::class);
+}
