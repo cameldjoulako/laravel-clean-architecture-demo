@@ -25,7 +25,7 @@ It shows the patterns I apply in production: domain boundaries, service layer or
 ## Quick notes
 
 -   This repository is not a full production system. It is intended as a reference for architecture and coding conventions.
--   Sensitive data must always be encrypted in real projects. Use app-level encryption or pgcrypto where needed.
+-   Sensitive data must always be encrypted in real projects. Use app-level encryption where needed.
 -   Use queues for heavy tasks (PDF generation, external submission) and record submission receipts for reconciliation.
 
 ## Basic usage
@@ -36,3 +36,40 @@ It shows the patterns I apply in production: domain boundaries, service layer or
 4. Configure MySQL settings in `.env`.
 
 ## Folder excerpt
+
+```
+app/
+  src/
+    Application/
+      Intervention/
+        DTOs/
+        UseCases/
+      Services/
+      Site/
+        DTOs/
+        UseCases/
+      Truck/
+        DTOs/
+        Services/
+        UseCases/
+    Domain/
+      Intervention/
+        Entities/
+        Repositories/
+      Site/
+        Entities/
+        Repositories/
+      Truck/
+        Entities/
+        Repositories/
+        ValueObjects/
+    Infrastructure/
+      Persistence/
+        Intervention/
+        Site/
+        Truck/
+      Repositories/
+resources/views/reports/
+routes/
+docs/
+```
