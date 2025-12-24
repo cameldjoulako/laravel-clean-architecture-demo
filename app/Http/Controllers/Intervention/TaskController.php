@@ -16,28 +16,20 @@ final class TaskController extends Controller
         private TaskRepository $repo
     ) {}
 
-    /**
-     * Display a list of the latest tasks..
-     */
+    //list of the latest tasks
     public function index()
     {
         return response()->json($this->repo->listLatest());
     }
 
-    /**
-     * Store a new task.
-     * - Validation is handled by TaskStoreRequest.
-     * - Mapping is handled by TaskInputMapper.
-     */
+    //Store a new task.
     public function store(TaskStoreRequest $request)
     {
         // Transform validated request data into a domain DTO
         $dto = TaskInputMapper::fromArray($request->validated());
 
-        // Delegate to use case
         $id = $this->create->handle($dto);
 
-        // Return a clean JSON response
         return response()->json(['id' => $id], 201);
     }
 }
