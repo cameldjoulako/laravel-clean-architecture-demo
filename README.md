@@ -1,4 +1,4 @@
-# Laravel Clean Architecture Demo — Field Operations Module (Laravel 11.45.1)
+# Laravel Clean Architecture Demo. Field Operations Module (Laravel 11.45.1)
 
 This repository is a small demonstration of how I structure Laravel 11 projects using a clear separation of concerns.  
 It shows the patterns I apply in production: domain boundaries, service layer orchestration, repository abstraction and simple PDF reporting.
